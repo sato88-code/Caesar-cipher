@@ -22,6 +22,18 @@ for char in codice:
         n_indice = (indice + chiave) % 26
         messaggio_criptato = messaggio_criptato + caratteri[n_indice]
 
-print(messaggio_criptato)
-
+print("ho cifrato il tuo messaggio \n", messaggio_criptato)
+time.sleep(1)
+print("vuoi che faccia il passaggio inverso?")
+risposta = input("s/n \n")
+if risposta == "s":
+    messaggio_decriptato = ""
+    for char in messaggio_criptato:
+        if char not in caratteri:
+            messaggio_decriptato = messaggio_decriptato + char
+        else:
+            indice=caratteri.index(char)
+            n_indice = (indice - chiave) % 26
+            messaggio_decriptato = messaggio_decriptato +caratteri[n_indice]
+    print(messaggio_decriptato)
 
